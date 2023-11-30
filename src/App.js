@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import SimpleCalculator from './Samples/SimpleCalculator';
+import { ProductContainer } from './views/admin/warehouse/product/ProductContainer';
 
 function App() {
   return (
     <div className="App">
       <h1>Mellat Bank 2023</h1>
+
+      <ProductContainer/>
       <SimpleCalculator defaultValue={20} bgColor="Red" code={101}/>
       <SimpleCalculator defaultValue={30} bgColor="#CCC" code={102}/>
       <SimpleCalculator defaultValue={40} bgColor={"Green"} code={103}/>
