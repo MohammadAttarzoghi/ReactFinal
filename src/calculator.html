@@ -1,10 +1,25 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <h1>This is a simple Calculator</h1>
+    <div>
+      <label>Valeu=</label>
+      <input id="txtValue" value="0" />
+    </div>
+    <button onclick="calc(1)">1</button>
+    <button onclick="calc(-1)">-1</button>
+    <button onclick="calc(5)">5</button>
+    <button onclick="calc(-5)">-5</button>
+  </body>
+  <script>
+    function calc(a) {
+      const temp = document.getElementById("txtValue").value;
+      const value = parseInt(temp) + a;
+      document.getElementById("txtValue").value = value;
+    }
+  </script>
 </html>
