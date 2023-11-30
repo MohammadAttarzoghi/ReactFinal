@@ -1,10 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import SimpleCalculator from './SimpleCalculator';
 
 function App() {
   return (
     <div className="App">
       <h1>Mellat Bank 2023</h1>
+      <SimpleCalculator defaultValue={20} bgColor="Red" code={101}/>
+      <SimpleCalculator defaultValue={30} bgColor="#CCC" code={102}/>
+      <SimpleCalculator defaultValue={40} bgColor={"Green"} code={103}/>
+      <SimpleCalculator defaultValue={60} code={104}/>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
