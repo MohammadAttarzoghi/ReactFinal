@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import SimpleCalculator from './SimpleCalculator';
+import SimpleCalculator from './Samples/SimpleCalculator';
 
 function App() {
   return (
