@@ -1,0 +1,13 @@
+.product-container {
+    display: flex;
+    border-bottom: 2px #ccc solid;
+    padding-bottom: 10px;
+}
+.product-info{
+    background-color:rgba(230, 157, 0, 0.882);
+    width: 40%;
+}
+.product-list{
+    background-color:rgba(15, 150, 173, 0.74);
+    width: 55%;
+}
