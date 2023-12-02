@@ -14,6 +14,14 @@ export const ProductContainer = () => {
     product.title = document.getElementById("title").value;
   //  alert(product.title);
     setProduct([...products, product]);
+    clear();
+  }
+  const clear=()=>{
+    document.getElementById("code").value = ""
+    document.getElementById("price").value = ""
+    document.getElementById("title").value = ""
+    document.getElementById("code").focus();
+
   }
 
 

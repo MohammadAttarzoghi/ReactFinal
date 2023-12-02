@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <h1>Mellat Bank 2023</h1>
 
-      <ProductContainer/>
+      <ProductContainer codeInit={0} titleInit={"kk"} priceInit={0} />
       <SimpleCalculator defaultValue={20} bgColor="Red" code={101}/>
       <SimpleCalculator defaultValue={30} bgColor="#CCC" code={102}/>
       <SimpleCalculator defaultValue={40} bgColor={"Green"} code={103}/>
