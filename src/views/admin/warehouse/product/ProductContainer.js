@@ -13,7 +13,15 @@ export const ProductContainer = () => {
     product.price = document.getElementById("price").value;
     product.title = document.getElementById("title").value;
   //  alert(product.title);
-    setProduct([...products, product]);
+    setProduct([product,...products]);
+    clear();
+  }
+  const clear=()=>{
+    document.getElementById("code").value = ""
+    document.getElementById("price").value = ""
+    document.getElementById("title").value = ""
+    document.getElementById("code").focus();
+
   }
 
 
@@ -37,7 +45,8 @@ export const ProductContainer = () => {
           </div>
           <div>
             <button onClick={save}>Save</button>
-            <button>Clear</button>
+            <button onClick={clear}>Clear</button>
+           
           </div>
         </div>
         <div className='product-list'>
@@ -53,7 +62,7 @@ export const ProductContainer = () => {
                 Price:{item.price}
               </div>
               <div>
-                Title:{item.Title}
+                Title:{item.title}
               </div>
 
               <div>
