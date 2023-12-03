@@ -20,21 +20,26 @@ export const ProductContainer = () => {
     // product.code = document.getElementById("code").value;
     // product.price = document.getElementById("price").value;
     // product.title = document.getElementById("title").value;
-    //  alert(product.title);
-    setProduct([product, ...products]);
+    //  alert(product.title);    
     clearOrFill();
   }
 
   const insert = (product) => {
-    products(currentIndex) = product;
+    setProduct([product, ...products]);
   }
-  const update = (product) => { }
+  const update = (product) => {
+    let temp = products;
+    temp[currentIndex] = product;
+    setProduct([...temp]); 
+    setCurrentIndex([-1]);
+
+  }
   const clearOrFill = (item) => {
     document.getElementById("code").value = item?.code ?? ""
     document.getElementById("price").value = item?.price ?? ""
     document.getElementById("title").value = item?.title ?? ""
     document.getElementById("code").focus();
-    setCurrentIndex[-1];
+    
 
   }
   const remove = (index) => {
