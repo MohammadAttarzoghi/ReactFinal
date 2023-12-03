@@ -12,17 +12,31 @@ export const ProductContainer = () => {
     product.code = document.getElementById("code").value;
     product.price = document.getElementById("price").value;
     product.title = document.getElementById("title").value;
-  //  alert(product.title);
-    setProduct([product,...products]);
-    clear();
+    //  alert(product.title);
+    setProduct([product, ...products]);
+    clearOrFill();
   }
-  const clear=()=>{
-    document.getElementById("code").value = ""
-    document.getElementById("price").value = ""
-    document.getElementById("title").value = ""
+  const clearOrFill = (item) => {
+    document.getElementById("code").value = item?.code ?? ""
+    document.getElementById("price").value = item?.price ?? ""
+    document.getElementById("title").value = item?.title ?? ""
     document.getElementById("code").focus();
 
   }
+  const remove = (index) => {
+    if (window.confirm("Are you sure to remove Item")) {
+      let temp = products
+      temp.splice(index, 1);
+      setProduct([...temp]);
+    }
+  }
+  const editItem = (index) => {
+    const product = products[index];
+    setCurrentIndex(index);
+    clearOrFill(product);
+  }
+
+
 
 
   return (
@@ -45,16 +59,16 @@ export const ProductContainer = () => {
           </div>
           <div>
             <button onClick={save}>Save</button>
-            <button onClick={clear}>Clear</button>
-           
+            <button onClick={clearOrFill}>Clear</button>
+
           </div>
         </div>
         <div className='product-list'>
           <h3>Product List: </h3>
 
-          {products.map((item,index) => (
+          {products.map((item, index) => (
             <div>
-              <h4>item index: {index+1}</h4>
+              <h4>item index: {index + 1}</h4>
               <div>
                 Code: {item.code}
               </div>
@@ -66,8 +80,8 @@ export const ProductContainer = () => {
               </div>
 
               <div>
-                <button>Edit</button>
-                <button>Remove</button>
+                <button onClick={() => editItem(index)}>Edit</button>
+                <button onClick={() => remove(index)}>Remove</button>
               </div>
             </div>
           ))}
