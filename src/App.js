@@ -6,6 +6,11 @@ import { Link, Route, Routes } from 'react-router-dom';
 import { Home } from './views/public/Home';
 import { Services } from './views/public/Services';
 
+
+import { Abouts } from './views/public/Abouts';
+import { Contactom } from './views/public/Contactom';
+
+
 function App() {
   return (
     <div className="App">
@@ -20,15 +25,17 @@ function App() {
       </ul>
       <Routes>
         <Route path="" element={<Home/>} />
-        <Route path="about" element={<About/>} />
+        <Route path="about" element={<Abouts/>} />
         <Route path="my-services" element={<Services/>} />
-        <Route path="contact-us" element={<Contact />} />
+        <Route path="contact-us" element={<Contactom/>} />
         <Route path="Session03" >
+          <>
           <ProductContainer />
           <SimpleCalculator defaultValue={20} bgColor="Red" code={101} />
           <SimpleCalculator defaultValue={30} bgColor="#CCC" code={102} />
           <SimpleCalculator defaultValue={40} bgColor={"Green"} code={103} />
           <SimpleCalculator defaultValue={60} code={104} />
+          </>
         </Route>
       </Routes>
       {/* <header className="App-header">
