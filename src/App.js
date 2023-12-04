@@ -5,10 +5,8 @@ import { ProductContainer } from './views/admin/warehouse/product/ProductContain
 import { Link, Route, Routes } from 'react-router-dom';
 import { Home } from './views/public/Home';
 import { Services } from './views/public/Services';
-
-
-import { Abouts } from './views/public/Abouts';
-import { Contactom } from './views/public/Contactom';
+import { About } from './views/public/About';
+import { Contact } from './views/public/Contact';
 
 
 function App() {
@@ -16,26 +14,30 @@ function App() {
     <div className="App">
       <h1>Mellat Bank 2023</h1>
       <ul>
-        <li><Link  to="/" >Home</Link></li>
+        <li><Link to="/home" >Home</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/my-services">Services</Link> </li>
         <li><Link to="/contact-us">Contacts</Link></li>
-        <li><Link to="/session-03">Session03</Link></li>
-          
+        <li><Link to="/session03">Session03</Link></li>
+
       </ul>
       <Routes>
-        <Route path="" element={<Home/>} />
-        <Route path="about" element={<Abouts/>} />
-        <Route path="my-services" element={<Services/>} />
-        <Route path="contact-us" element={<Contactom/>} />
-        <Route path="Session03" >
+        <Route path="home" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="my-services" element={<Services />} />
+        <Route path="contact-us" element={<Contact />} />
+        <Route path="Session03" element={
           <>
-          <ProductContainer />
-          <SimpleCalculator defaultValue={20} bgColor="Red" code={101} />
-          <SimpleCalculator defaultValue={30} bgColor="#CCC" code={102} />
-          <SimpleCalculator defaultValue={40} bgColor={"Green"} code={103} />
-          <SimpleCalculator defaultValue={60} code={104} />
+            <ProductContainer />
+            <SimpleCalculator defaultValue={20} bgColor="Red" code={101} />
+            <SimpleCalculator defaultValue={30} bgColor="#CCC" code={102} />
+            <SimpleCalculator defaultValue={40} bgColor={"Green"} code={103} />
+            <SimpleCalculator defaultValue={60} code={104} />
           </>
+        }>
+
+
+
         </Route>
       </Routes>
       {/* <header className="App-header">
