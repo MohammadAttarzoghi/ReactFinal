@@ -39,7 +39,7 @@ export const ProductContainer = () => {
     document.getElementById("price").value = item?.price ?? ""
     document.getElementById("title").value = item?.title ?? ""
     document.getElementById("code").focus();
-    
+     
 
   }
   const remove = (index) => {
