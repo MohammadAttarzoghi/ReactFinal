@@ -1,7 +1,15 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 
 export const Home = () => {
   return (
-    <div>Home</div>
+    <>
+      <Helmet>
+        <title>Home </title>
+        
+      </Helmet>
+      <div>Home</div>
+    </>
+
   )
 }

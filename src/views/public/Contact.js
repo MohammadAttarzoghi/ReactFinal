@@ -1,7 +1,14 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 
 export const Contact = () => {
   return (
-    <div>Contactom</div>
+    <>
+    <Helmet>
+    <title>Contact </title>
+  
+  </Helmet>
+    <div>Contact</div>
+    </>
   )
 }
