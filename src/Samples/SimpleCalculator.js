@@ -4,7 +4,7 @@ const SimpleCalculator = ({defaultValue, bgColor,code}) => {
     const [calcValue,setCalcValue] = useState(defaultValue);
     const calc = (a)=> {
         setCalcValue(calcValue+a);
-    }
+    } 
   return (
     <>
     <h1 style={{backgroundColor:bgColor}}>This {code} is a Simple Calculator</h1>

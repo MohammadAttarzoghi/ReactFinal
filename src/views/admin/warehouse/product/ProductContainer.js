@@ -5,10 +5,15 @@ export const ProductContainer = () => {
 
   const [products, setProduct] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
+  // const [code,setCode] =useState(5);
+  // const [title,setTitle] =useState(5);
+  // const [price,setPrice] =useState(5);
+
   // const [first, setfirst] = useState(second)
 
   const save = () => {
     let product = {};
+
     product.code = document.getElementById("code").value;
     product.price = document.getElementById("price").value;
     product.title = document.getElementById("title").value;
@@ -23,6 +28,12 @@ export const ProductContainer = () => {
     document.getElementById("code").focus();
 
   }
+  const remove=(index)=>{
+    let temp = products
+    temp.splice(index,1);
+    setProduct([...temp])
+
+  }
 
 
   return (
@@ -33,7 +44,7 @@ export const ProductContainer = () => {
           <h3>Product Info:</h3>
           <div>
             <label>Code: </label>
-            <input id="code" />
+            <input id="code"  />
           </div>
           <div>
             <lable>Title: </lable>
@@ -41,7 +52,7 @@ export const ProductContainer = () => {
           </div>
           <div>
             <lable>Price: </lable>
-            <input id="price" />
+            <input id="price"  />
           </div>
           <div>
             <button onClick={save}>Save</button>
@@ -67,7 +78,7 @@ export const ProductContainer = () => {
 
               <div>
                 <button>Edit</button>
-                <button>Remove</button>
+                <button onClick={()=>remove(index)}>R emove</button>
               </div>
             </div>
           ))}
