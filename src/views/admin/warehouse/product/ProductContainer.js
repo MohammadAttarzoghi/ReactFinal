@@ -17,21 +17,33 @@ export const ProductContainer = () => {
     product.code = document.getElementById("code").value;
     product.price = document.getElementById("price").value;
     product.title = document.getElementById("title").value;
-  //  alert(product.title);
-    setProduct([product,...products]);
-    clear();
+    if (currentIndex == -1)
+      insert(product)
+    else
+      update(product)
+    // let product = {};
+    // product.code = document.getElementById("code").value;
+    // product.price = document.getElementById("price").value;
+    // product.title = document.getElementById("title").value;
+    //  alert(product.title);    
+    clearOrFill();
   }
-  const clear=()=>{
-    document.getElementById("code").value = ""
-    document.getElementById("price").value = ""
-    document.getElementById("title").value = ""
-    document.getElementById("code").focus();
+
+  const insert = (product) => {
+    setProduct([product, ...products]);
+  }
+  const update = (product) => {
+    let temp = products;
+    temp[currentIndex] = product;
+    setProduct([...temp]); 
+    setCurrentIndex([-1]);
 
   }
-  const remove=(index)=>{
-    let temp = products
-    temp.splice(index,1);
-    setProduct([...temp])
+  const clearOrFill = (item) => {
+    document.getElementById("code").value = item?.code ?? ""
+    document.getElementById("price").value = item?.price ?? ""
+    document.getElementById("title").value = item?.title ?? ""
+    document.getElementById("code").focus();
 
   }
 
@@ -56,16 +68,16 @@ export const ProductContainer = () => {
           </div>
           <div>
             <button onClick={save}>Save</button>
-            <button onClick={clear}>Clear</button>
-           
+            <button onClick={clearOrFill}>Clear</button>
+
           </div>
         </div>
         <div className='product-list'>
           <h3>Product List: </h3>
 
-          {products.map((item,index) => (
+          {products.map((item, index) => (
             <div>
-              <h4>item index: {index+1}</h4>
+              <h4>item index: {index + 1}</h4>
               <div>
                 Code: {item.code}
               </div>
@@ -78,7 +90,7 @@ export const ProductContainer = () => {
 
               <div>
                 <button>Edit</button>
-                <button onClick={()=>remove(index)}>R emove</button>
+                <button>Remove</button>
               </div>
             </div>
           ))}
