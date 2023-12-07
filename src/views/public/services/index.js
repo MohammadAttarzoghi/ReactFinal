@@ -17,8 +17,9 @@ export const Services = () => {
         <li><Link to="/my-services/ServiceA">Service A</Link></li>
         <li><Link to="/my-services/ServiceB">Service B</Link></li>
         <li><Link to="/my-services/ServiceC">Service C</Link></li>
-
       </ul>
+      <hr/>
+      <outlet/>
     </>
   )
 }
