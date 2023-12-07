@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 export const Services = () => {
   return (
@@ -17,9 +17,10 @@ export const Services = () => {
         <li><Link to="/my-services/ServiceA">Service A</Link></li>
         <li><Link to="/my-services/ServiceB">Service B</Link></li>
         <li><Link to="/my-services/ServiceC">Service C</Link></li>
-      </ul>
+      </ul> 
       <hr/>
-      <outlet/>
+      <Outlet/>
     </>
   )
 }
+ 
