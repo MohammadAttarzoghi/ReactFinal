@@ -22,9 +22,7 @@ function App() {
         <li><Link to="/my-services">Services</Link> </li>
         <li><Link to="/contact-us">Contacts</Link></li>
         <li><Link to="/session03">Session03</Link></li>
-
       </ul>
-
       <Routes>
         <Route path="home" element={<Home />} />
         <Route path="about" element={<About />} />
@@ -43,9 +41,6 @@ function App() {
             <SimpleCalculator defaultValue={60} code={104} />
           </>
         }>
-
-
-
         </Route>
       </Routes>
       {/* <header className="App-header">

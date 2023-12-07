@@ -44,9 +44,7 @@ export const ProductContainer = () => {
     document.getElementById("price").value = item?.price ?? ""
     document.getElementById("title").value = item?.title ?? ""
     document.getElementById("code").focus();
-
-  }
-
+    }
 
   return (
     <>
@@ -69,7 +67,6 @@ export const ProductContainer = () => {
           <div>
             <button onClick={save}>Save</button>
             <button onClick={clearOrFill}>Clear</button>
-
           </div>
         </div>
         <div className='product-list'>
@@ -87,7 +84,6 @@ export const ProductContainer = () => {
               <div>
                 Title:{item.title}
               </div>
-
               <div>
                 <button>Edit</button>
                 <button>Remove</button>

@@ -14,9 +14,9 @@ export const Services = () => {
         helmet is fully backwarded and compatible with previous helmet releases, so you can go
       </p>
       <ul>
-        <li><Link to="/my-services/ServiceA">ServiceA</Link></li>
-        <li><Link to="/my-services/ServiceB">ServiceB</Link></li>
-        <li><Link to="/my-services/ServiceC">ServiceC</Link></li>
+        <li><Link to="/my-services/ServiceA">Service A</Link></li>
+        <li><Link to="/my-services/ServiceB">Service B</Link></li>
+        <li><Link to="/my-services/ServiceC">Service C</Link></li>
 
       </ul>
     </>
